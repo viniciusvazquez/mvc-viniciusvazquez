@@ -3,19 +3,17 @@
 	/**
 	* 
 	*
-	*
-	*
-	*
-	*
-	*
 	**/
 
-	class homeController {
+	class homeController extends controller{
 		public function index(){
-			echo "INDEX HOME";
-		}
+			$anuncios = new Anuncios();
 
-		public function abrir($id){
-			echo "Abrindo galeria: ".$id;
+			$dados = array(
+				'quantidade' => $anuncios->getQtdAnuncios(),
+				'nome' => $anuncios->getNome()
+			);
+
+			$this->loadTemplate('home', $dados);
 		}
 	}

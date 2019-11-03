@@ -3,19 +3,15 @@
 	/**
 	* 
 	*
-	*
-	*
-	*
-	*
-	*
 	**/
 
-	class galeriaController {
+	class galeriaController extends controller{
 		public function index(){
-			echo "galeria HOME";
-		}
+			$dados = array(
+				'nome' => 'Galeria',
+				'qtdAlbuns' => 30
+			);
 
-		public function abrir($id){
-			echo "Abrindo galeria: ".$id;
+			$this->loadTemplate('galeria', $dados);
 		}
 	}
